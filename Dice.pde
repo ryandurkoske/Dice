@@ -1,20 +1,22 @@
 void setup()
 {
   noLoop();
-  size(505,505);
+  size(505,530);
+  
 }
 void draw()
 {
+  background(150);
+  int counter = 0;
   for(int x = 5; x < 495; x+= 45){
     for(int y = 5; y < 495; y+= 45){
       Die foo = new Die(x,y,40);
       foo.roll();
       foo.show();
+      counter+=foo.val;
     }
   }
-  Die foo = new Die(95,95,310);
-  foo.roll();
-  foo.show();
+  text("Total: " + counter, 20,510);
 }
 void mousePressed()
 {
